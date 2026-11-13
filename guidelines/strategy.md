@@ -55,4 +55,15 @@ To ensure absolute technical rigor and prevent premature coding, every project m
 
 * Run hardware profiling tools (`perf`, `valgrind`, `gprof`) to analyze cache behavior, memory alignment, and execution bottlenecks.
 
+---
+
+## Data Flow & Memory Interoperability (Zero-Copy)
+
+To avoid disk I/O bottlenecks and text-serialization overhead, data movement between layers strictly adheres to a zero-copy memory paradigm:
+
+1. **Initialization (Python / Config):** Initial conditions, grids, and physical parameters are generated in-memory via Python (using contiguous NumPy arrays) or loaded from structured configuration files.
+2. **Bridge Handshake (C / C++):** Pointers to the raw memory buffers are passed across the binary boundary via `ctypes` or `pybind11` without duplicating arrays.
+3. **Core Execution (Fortran):** The compute-heavy numerical kernels execute directly on the shared memory space, leveraging parallel loops (`OpenMP`) for maximum throughput.
+4. **Post-Processing & Visualization:** Results remain in-memory for immediate plotting and convergence analysis, eliminating temporary files on disk.
+
 ```
