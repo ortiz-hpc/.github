@@ -10,5 +10,7 @@ Linguagens: Fortran, C, C++ e Python
 fortan: rsolucao do problema, claculo matematico compreciso
 c/c++: memoria, thread, comunicacao baixco nivel e chamada don codigo fortan
 python: desenh grafico e output de analise
+relatoruo de profiling
+
 
 fulxo: porblema - modelagem matematica - pgramam fortan - c++  python
