@@ -19,25 +19,39 @@ The primary objective of this organization is to demonstrate practical technical
 
 ---
 
+## 📂 Organization Repositories
+
+The ecosystem is split into dedicated, modular repositories to maintain strict separation of concerns:
+
+| Repository | Purpose & Content |
+| :--- | :--- |
+| **[` .github`](https://github.com/ortiz-hpc/.github)** | Central configuration, global organization profile, and the **`guidelines/`** knowledge base (`math.md`, `physics.md`, `estrategia.md`). |
+| **[`fortran-pocs`](https://github.com/ortiz-hpc/fortran-pocs)** | Numerical kernels, raw mathematical models, and compute-heavy core engines written in Modern Fortran. |
+| **[`c-cpp-pocs`](https://github.com/ortiz-hpc/c-cpp-pocs)** | Orchestration layers, ISO C-bindings, memory management, and multi-core parallelism (`OpenMP`/`MPI`). |
+| **[`python-pocs`](https://github.com/ortiz-hpc/python-pocs)** | Post-processing, numerical validation pipelines, and high-fidelity scientific data visualization. |
+| **[`articles`](https://github.com/ortiz-hpc/articles)** | Technical publications, architectural deep-dives, and engineering notes published on Dev.to, Medium, and LinkedIn. |
+
+---
+
 ## 🛠️ Technological Architecture (The HPC Triad)
 
 To achieve maximum computational throughput without sacrificing analytical capability, projects adhere to a 3-layer architecture:
 
 ```text
 ┌────────────────────────────────────────────────────────────────────────┐
-│                          1. FORTRAN (Engine)                           │
-│      High-precision numerical computing, physics, and dense matrices   │
+│                        1. FORTRAN (Engine)                             │
+│    High-precision numerical computing, physics, and dense matrices     │
 └──────────────────────────────────┬─────────────────────────────────────┘
                                    │  (C-Bindings / ISO_C_BINDING)
 ┌──────────────────────────────────▼─────────────────────────────────────┐
-│                       2. C / C++ (Orchestration)                       │
+│                      2. C / C++ (Orchestration)                        │
 │    Memory management, multi-core parallelism (OpenMP/MPI), C-bridge    │
 └──────────────────────────────────┬─────────────────────────────────────┘
                                    │  (ctypes / CFFI / pybind11)
 ┌──────────────────────────────────▼─────────────────────────────────────┐
-│                          3. PYTHON (Analysis)                          │
-│        Data visualization, graphics plotting, and performance analysis │
-└────────────────────────────────────────────────────────────────────────┘
+│                        3. PYTHON (Analysis)                            │
+│      Data visualization, graphics plotting, and performance analysis   │
+└────────────────────────────────────────────────────────────────────────/
 
 ```
 
@@ -49,21 +63,40 @@ To achieve maximum computational throughput without sacrificing analytical capab
 
 ---
 
+## 🏗️ Standard PoC Project Structure
+
+Every individual problem or simulation repository/module follows a rigorous, uniform layout to guarantee reproducibility and clean separation:
+
+```text
+problem-name/
+├── src/
+│   ├── core/          # Fortran numerical engines (.f90)
+│   ├── bridge/        # C/C++ orchestration layers & ISO C bindings (.cpp / .h)
+│   └── analysis/      # Python scripts for visualization & post-processing (.py)
+├── docs/              # Mathematical derivation, physical modeling notes, and theory
+├── benchmarks/        # Performance reports, profiling logs (perf/valgrind), and speedup data
+├── Makefile           # Automated build rules for compilation, linking, and testing
+└── README.md          # Specific documentation, boundary conditions, and execution results
+
+```
+
+---
+
 ## 🔄 Development Pipeline
 
-Every PoC (Proof of Concept) or exercise within this repository strictly adheres to the following workflow:
+Every Proof of Concept (PoC) or simulation within this ecosystem strictly adheres to the following workflow:
 
 ```text
 [Real-World Problem] 
-       ↓
+        ↓
 [Mathematical & Physical Modeling] 
-       ↓
+        ↓
 [Engine Implementation in Fortran] 
-       ↓
+        ↓
 [Bridge & Parallelization in C/C++] 
-       ↓
+        ↓
 [Orchestration & Plotting in Python] 
-       ↓
+        ↓
 [Profiling Report & Benchmarking]
 
 ```
@@ -94,4 +127,3 @@ All projects contain a dedicated section in their local `README` featuring key e
 ---
 
 *Ortiz HPC — Engineering at the Edge of Hardware.*
-
