@@ -95,4 +95,3 @@ All projects contain a dedicated section in their local `README` featuring key e
 
 *Ortiz HPC — Engineering at the Edge of Hardware.*
 
-```
