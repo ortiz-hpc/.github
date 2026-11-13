@@ -1,70 +1,70 @@
 # Ortiz HPC 🚀
 
-> **Estudos Independentes & PoCs de Computação de Alta Performance (HPC)**  
-> *Resolução de problemas do mundo real através de matemática aplicada, engenharia de sistemas de baixo nível e otimização física de hardware.*
+> **Independent Studies & PoCs in High-Performance Computing (HPC)**  
+> *Solving real-world problems through applied mathematics, low-level systems engineering, and hardware-level performance tuning.*
 
 ---
 
-## 📌 Sobre o Projeto
+## 📌 About the Project
 
-O **Ortiz HPC** é um ecossistema de engenharia e investigação independente focado em **High-Performance Computing (HPC)**, simulação numérica e otimização de sistemas computacionais de alto rendimento.
+**Ortiz HPC** is an independent engineering and research initiative focused on **High-Performance Computing (HPC)**, numerical simulation, and high-throughput systems optimization.
 
-O objetivo principal desta organização é demonstrar competência técnica prática na resolução de problemas científicos e industriais de alta complexidade, documentando benchmarks de desempenho, profiling de memória e paralelismo.
+The primary objective of this organization is to demonstrate practical technical competence in solving high-complexity scientific and industrial problems while documenting performance benchmarks, memory profiling, and parallelism execution.
 
-### Objetivos Estratégicos
-- 🔬 **Domínio de Baixo Nível:** Exploração do limite do hardware (gestão manual de memória, cache alignment, vetorização SIMD).
-- 🧮 **Matemática Aplicada:** Resolução de equações diferenciais, álgebra linear densa/esparsa e métodos numéricos.
-- 🎓 **Preparação Académica:** Base prática e rigorosa para nível de Mestrado e Investigação Científica em HPC.
-- 🌐 **Engenharia para o Mercado Global:** Demonstração pública de métricas de aceleração (*speedup*) e eficiência paralela.
+### Strategic Objectives
+- 🔬 **Low-Level Mastery:** Pushing hardware limits through manual memory management, cache alignment, and SIMD vectorization.
+- 🧮 **Applied Mathematics:** Solving differential equations, dense/sparse linear algebra, and numerical methods.
+- 🎓 **Academic Preparation:** Building a rigorous practical foundation for Master's degree research and scientific computing in HPC.
+- 🌐 **Global Market Engineering:** Publicly showcasing speedup metrics and parallel efficiency across benchmarks.
 
 ---
 
-## 🛠️ Arquitetura Tecnológica (A Tríade de HPC)
+## 🛠️ Technological Architecture (The HPC Triad)
 
-Para garantir a máxima eficiência computacional sem abdicar da capacidade analítica, os projetos seguem uma arquitetura em 3 camadas complementares:
+To achieve maximum computational throughput without sacrificing analytical capability, projects adhere to a 3-layer architecture:
 
 ```text
 ┌────────────────────────────────────────────────────────────────────────┐
 │                          1. FORTRAN (Engine)                           │
-│     Cálculo numérico de alta precisão, física e matrizes densas       │
+│      High-precision numerical computing, physics, and dense matrices   │
 └──────────────────────────────────┬─────────────────────────────────────┘
                                    │  (C-Bindings / ISO_C_BINDING)
 ┌──────────────────────────────────▼─────────────────────────────────────┐
-│                       2. C / C++ (Orquestração)                        │
-│   Gestão de memória, paralelismo (OpenMP/MPI) e ponte de baixo nível   │
+│                       2. C / C++ (Orchestration)                       │
+│    Memory management, multi-core parallelism (OpenMP/MPI), C-bridge    │
 └──────────────────────────────────┬─────────────────────────────────────┘
                                    │  (ctypes / CFFI / pybind11)
 ┌──────────────────────────────────▼─────────────────────────────────────┐
-│                          3. PYTHON (Análise)                           │
-│      Geração de gráficos, visualização de dados e análise gráfica     │
+│                          3. PYTHON (Analysis)                          │
+│        Data visualization, graphics plotting, and performance analysis │
 └────────────────────────────────────────────────────────────────────────┘
 
 ```
 
-| Linguagem | Responsabilidade no Ecossistema |
+| Language | Role in Ecosystem |
 | --- | --- |
-| **Fortran 2003/2008+** | **Núcleo Numérico (*Engine*):** Resolução exata de algoritmos numéricos, loops intensivos e cálculo científico de alta velocidade. |
-| **C / C++ (17/20)** | **Orquestração & Baixo Nível:** Interoperabilidade via *C-Bindings*, concorrência multi-core (*OpenMP*), sistemas distribuídos (*MPI*) e gestão fina de memória. |
-| **Python 3** | **Visualização & Glue Code:** Invocação dos binários compilados (`.so`/`.dll`), extração de métricas e geração de gráficos de convergência/speedup (*Matplotlib/Seaborn/PyVista*). |
+| **Fortran 2003/2008+** | **Numerical Core (*Engine*):** Exact execution of numerical algorithms, compute-heavy loops, and high-speed scientific calculations. |
+| **C / C++ (17/20)** | **Orchestration & Low-Level:** Interoperability via *C-Bindings*, multi-core concurrency (*OpenMP*), distributed systems (*MPI*), and fine-grained memory management. |
+| **Python 3** | **Visualization & Glue Code:** Invoking compiled shared libraries (`.so`/`.dll`), extracting metrics, and plotting convergence/speedup curves (*Matplotlib/Seaborn/PyVista*). |
 
 ---
 
-## 🔄 Fluxo de Desenvolvimento
+## 🔄 Development Pipeline
 
-Cada PoC (Proof of Concept) ou exercício dentro deste repositório segue rigorosamente o pipeline abaixo:
+Every PoC (Proof of Concept) or exercise within this repository strictly adheres to the following workflow:
 
 ```text
-[Problema do Mundo Real] 
+[Real-World Problem] 
        ↓
-[Modelagem Matemática & Física] 
+[Mathematical & Physical Modeling] 
        ↓
-[Implementação da Engine em Fortran] 
+[Engine Implementation in Fortran] 
        ↓
-[Bridge & Paralelização em C/C++] 
+[Bridge & Parallelization in C/C++] 
        ↓
-[Orquestração & Plot Gráfico em Python] 
+[Orchestration & Plotting in Python] 
        ↓
-[Relatório de Profiling & Benchmarking]
+[Profiling Report & Benchmarking]
 
 ```
 
@@ -72,15 +72,15 @@ Cada PoC (Proof of Concept) ou exercício dentro deste repositório segue rigoro
 
 ## 📊 Rigor & Benchmarking
 
-Todos os projetos contêm uma seção dedicada no `README` local com os seguintes entregáveis de engenharia:
+All projects contain a dedicated section in their local `README` featuring key engineering deliverables:
 
-* **Análise de Correção Matemática:** Comparação da solução numérica com a solução analítica exata.
-* **Métricas de Performance:** Medição de *Speedup* ($S(p) = \frac{T_1}{T_p}$) e *Eficiência Paralela* ($E(p)$).
-* **Profiling de Hardware:** Diagnóstico de gargalos, *cache misses* e alocação de memória usando ferramentas como `perf`, `Valgrind` e `gprof`.
+* **Mathematical Validation:** Comparing numerical outputs against analytical exact solutions.
+* **Performance Metrics:** Measuring *Speedup* ($S(p) = \frac{T_1}{T_p}$) and *Parallel Efficiency* ($E(p)$).
+* **Hardware Profiling:** Diagnosing bottlenecks, cache misses, and memory allocation efficiency using tools such as `perf`, `Valgrind`, and `gprof`.
 
 ---
 
-## 👤 Autor
+## 👤 Author
 
 **Ortiz David**
 
